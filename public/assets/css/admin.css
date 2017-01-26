@@ -1,0 +1,100 @@
+body, .top20{
+	margin-top: 20px;
+}
+
+textarea.form-control.hgt100{
+    height: 100px;
+}
+
+.left10{
+	margin-left: 10px;
+}
+
+.right5{
+	margin-right: 5px;
+}
+
+.glyphicon {
+	border: 0px;
+}
+
+.pagination{
+	margin-top:0px; 
+}
+
+.current_user_email{
+	color: #999;
+	margin-top: 15px;
+}
+
+textarea.form-control.menu_html{
+	height: 100px;
+}
+
+.menu_html_cont{
+	display:none;
+}
+
+.toggle_menu_html{
+	cursor: pointer;
+}
+
+.menu_file_tree tr{
+	cursor: pointer;
+}
+.jstree-anchor{
+    margin-bottom: 10px !important;
+}
+.tree li.parent_li>span {
+    cursor:pointer
+}
+.tree>ul>li::before, .tree>ul>li::after {
+    border:0
+}
+.tree li:last-child::before {
+    height:30px
+}
+.tree li > span > span {
+	padding: 5px;
+}
+.table-search-form .form-control{
+    width: auto;
+    margin-right: 10px;
+}
+.upload_img_cont{
+    text-align: center;
+}
+.upload_img_cont img{
+    width: 100%;
+}
+.delete_image{
+    font-size: 20px;
+    color:grey;
+    cursor: pointer;
+}
+.generate-alias{
+    position: relative;
+    right: 18px;
+}
+#vkcheckbox{
+    margin-right: 20px;
+}
+input[type=checkbox] {
+    top: 2px;
+    position: relative;
+}
+.mce-tinymce{
+    width: 100% !important;
+}
+.table th{
+    min-width: 160px;
+}
+.seocont{
+    display: none;
+}
+.pointer{
+    cursor: pointer;
+}
+.seotoggle{
+    margin-left: 15px;
+}

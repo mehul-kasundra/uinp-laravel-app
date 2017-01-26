@@ -1,0 +1,564 @@
+responsive filemanager
+HOME
+ABOUT
+DEMO
+DOCUMENTATION
+DOWNLOAD
+SUPPORT
+CONTACT
+responsive filemanager integration aviary
+START NOW
+Take A Look
+ABOUT our FileManager
+
+ Please support the project 
+PayPal - The safer, easier way to pay online! 
+Responsive FileManager 9.8.1 is a free open-source file manager and image manager made with the jQuery library, CSS3, PHP and HTML5 that offers a nice and elegant way to upload and insert files, images and videos.
+You can use it as external plugin for TinyMCE version 4.x. and you can also use it as a stand-alone file manager to manage and select files.
+The script automatically creates thumbnails of images for the preview list and can create also external thumbnails to use in your cms or site.
+It can be configured for automatic resizing of uploaded images or to automatically limit the size.
+You can personalize the configuration for each folder.
+You can set a subfolder as the root and change the configuration for each user, page or FileManager call.
+Is compatible with multi-user mode and you can edit images with aviary editor, sorting files.
+
+
+Changes in Version 9.8.1 (2014/11/25)
+
+- add compatibility with free full resolution with aviary image editor
+
+- convert all include(); with include ‘’;
+
+- fix a problem with lowercase automatically change
+
+Changes in Version 9.8.0 (2014/10/28)
+
+- add pdf, openoffice files preview with customized viewer.js
+
+- add other office file preview with google preview
+
+- fixed ordering bug
+
+- improve layout style
+
+- add copy to clipboard button on show url dialog
+
+- fixed a bug when download a file
+
+- fixed a bug in relative path images creation
+
+- adding custom convert_spaces [by fungio]
+
+Changes in Version 9.7.3 (2014/09/17)
+
+- Fix a problem with lazy load and filters
+
+- add option to remember text filter in session
+
+Changes in Version 9.7.2 (2014/09/11)
+
+- Fix a layout bug changing layout and improve style
+
+- Add touch devices compatibility for drag&drop
+
+- Relative URL-s can be returned when selecting files from the filemanager: a 'relative_url' GET parameter should be added to the request with a value of "1" when opening RFM. Otherwise returned URL-s will be absolute.
+
+Changes in Version 9.7.1 (2014/09/06)
+
+- Improve drag & drop : now work without refresh and work also the move to back folder
+
+- Improve style and icons
+
+Changes in Version 9.7.0 (2014/09/04)
+
+- Feature lazy loading
+
+- Add CALLBACK function call after update a field
+
+- Correct MIME type on download page
+
+- Fix error with preview of text file
+
+- Remove loading bar
+
+ Changes in Version 9.x.x (2013/11/21 - 2014/08/14)
+
+Easy to Install
+
+Simple to install and customise with a lot of configurations.
+
+Web Standard usage
+
+HTML5, CSS3, JavaScript, jQuery, AJAX, PHP.
+
+Beautiful Design
+
+Beautiful flat responsive design with Bootstrap.
+
+Easy to Use
+
+Is very simple to use for all users .
+
+what's more
+GREAT FEATURES
+Upload files with a simple drag & drop or with JAVA applet without size limitation
+
+Use as stand-alone file manager or as TinyMCE plugin and as crossdomain
+
+Built to modern web standards using Bootstrap with responsive layout
+
+Each folder can have different configuration and permissions
+
+Many customisation parameters such as Automatic resizing of uploaded images, Optional limiting of image dimensions, Files allowed lists
+
+Swipe action to show buttons on touch devices
+
+Automatic creation of thumbnails and Automatic realignment of thumbnails after external changes
+
+Compatibility with older browsers (e.g. IE ) [if you want compatibility also with ie8, please downgrade ZeroClipboard to version 2.02]
+
+Full preview of uploaded images, videos and audios
+
+Personalisation of every operating permission
+
+Instantaneous file type and text filters
+
+Multi-user use support (Different roots for every user)
+
+Awesome graphics and three different file viewing options
+
+Localization in many languages
+
+Instantaneous files list sorting through many parameters
+
+Edit images with Aviary image editor
+
+If you like my work... please give me a donation to support the project
+PayPal - The safer, easier way to pay online! 
+
+or donating at trippo@hotmail.it
+"all great things are simple" (Winston Churchill).
+Take A Look
+ScREENShOT
+responsive filemanager file uploading
+FILE UPLOADING
+responsive filemanager list files view
+LIST FILES VIEW
+responsive filemanager preview box layout
+PREVIEW BOX LAYOUT
+responsive filemanager grid files view
+GRID FILES VIEW
+responsive filemanager multiple colums list view
+MULTIPLE COLUMS LIST VIEW
+responsive filemanager tinymce integration
+TINYMCE INTEGRATION
+DOCUMENTATION
+
+Installation
+Upload the 'filemanager' folder where you want in your server (in the example is on root).
+Create a folder for your uploaded files and give it write permission (755).
+Open filemanager/config/config.php and edit the settings (read config.php parameters setting paragraph). Save file.
+Subscribe to Aviary.com to get a free app key (NB the free account limits the export of images to a maximum of 800x800 pixels) 
+NB Aviary Editor only works online; it won't work on localhost!!
+Great! Your work is finished!
+PS If you don't see the preview images you need to give write permission to the thumbs folder.
+If you are updating from a previous version of FileManager delete the contents of thumbs folder, the script will automatically re-create the thumbnails.
+
+!IMPORTANT: if you are using htaccess protection, make sure your $GLOBALS PHP_AUTH_USER/PHP_AUTH_USER are defined in your webserver config
+
+USE AS TINYMCE 4 FILE MANAGER
+
+Copy tinymce/plugins/responsivefilemanager folder to tinymce/plugins/ in your server
+N.B.: REMEMBER THAN RESPONVIVEFILEMANAGER IS NOT FILEMANAGER FOLDER BUT AN ADDITIONAL PLUGIN
+Settings of tinymce should be like this: (remember to add responsivefilemanager in plugins list):
+
+ tinymce.init({
+    selector: "textarea",theme: "modern",width: 680,height: 300,
+    plugins: [
+         "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+         "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
+         "table contextmenu directionality emoticons paste textcolor responsivefilemanager"
+   ],
+   toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+   toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
+   image_advtab: true ,
+   
+   external_filemanager_path:"/filemanager/",
+   filemanager_title:"Responsive Filemanager" ,
+   external_plugins: { "filemanager" : "/filemanager/plugin.min.js"}
+ });
+
+You can pass this variables on TinyMCE init.
+filemanager_title the title of filemanager window default="Responsive filemanager"
+filemanager_sort_by: the element to sorting (values: name,size,extension,date) default="" 
+filemanager_descending: descending ? or ascending (values=true or false) default="false" 
+
+If you want full path url in tinyMCE paths you can add relative_urls: false on tinyMCE init (read tinyMCE Configuration page)
+external_filemanager_path and external_plugins path must be absolute from root and must point to filemanager folder not responsivefilemanager plugin folder
+Change the path in your tinymce init function in external_filemanager_path and external_plugins (the path must be a absolute path from base_url of your site and must start with / so in this example i have the filemanager folder in www.site.com/filemanager/)
+If you are updating from older version (from 1 to 7) substitute your tinyMCE with new or download only the image/media/link originals folders and copy in your tinyMCE plugin folder
+
+USE AS STAND-ALONE FILE MANAGER
+
+You can use normal pop-up, Bootstrap modal, iframe, FancyBox iframe, Lightbox iframe to open the FileManager with these paths:
+
+Only open filemanager(type=0 and not set field_id): 
+path to filemanager../filemanager/dialog.php?type=0&fldr=
+
+Select Image: (type=1 and set id of input text in field_id variable):
+path to filemanager../filemanager/dialog.php?type=1&field_id=fieldID
+
+Select Video: (type=3 and set id of input text in field_id variable): 
+path to filemanager../filemanager/dialog.php?type=3&field_id=fieldID
+
+Select File: (type=2 and set id of input text in field_id variable): 
+path to filemanager../filemanager/dialog.php?type=2&field_id=fieldID
+
+Get Variables list
+type: the type of filemanager (1:images files 2:all files 3:video files)
+fldr: the folder where i enter (the root folder remains the same). default=""
+sort_by: the element to sorting (values: name,size,extension,date) default="" 
+descending: descending? or ascending (values=true or false) default="false" 
+lang: the language code (es: &lang=en_EN). default="en_EN"
+relative_url: should be	added to the request with a value of "1" when opening RFM. Otherwise returned URL-s will be absolute.
+
+If you want use popup add in the address &popup=1
+
+PS If you want to force loading at root set fldr to /
+
+In demo page i use FancyBox with this configuration:
+
+     $('.iframe-btn').fancybox({	
+	'width'		: 900,
+	'height'	: 600,
+	'type'		: 'iframe',
+        'autoScale'    	: false
+    });
+and the button has this code to open FileManager:
+
+ <a href="js/tinymce/plugins/filemanager/dialog.php?type=0" class="btn iframe-btn" type="button">Open Filemanager</a>
+Remember to include FancyBox, file in head section:
+
+ <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+If you not use FancyBox, you must change the function to close the windows after file selection in filemanager/js/include.js:
+
+ function close_window() {
+    parent.$.fancybox.close();
+} 
+CALLBACK FUNCTION CALL after update a field
+If you want change something on returned url after RFM click on a file; you can define the responsive_filemanager_callback function like this example:
+
+function responsive_filemanager_callback(field_id){
+	console.log(field_id);
+	var url=jQuery('#'+field_id).val();
+	alert('update '+field_id+" with "+url);
+	//your code
+}
+SECURITY ON RESPONSIVE FILEMANAGER
+In config.php there is a part reserved to security pass
+
+define('USE_ACCESS_KEYS', FALSE);
+if set to true only those will access RF whose url contains the access key(akey) like:
+< input type="button" href="../filemanager/dialog.php?field_id=imgField&lang=en_EN&akey=myPrivateKey" value="Files">
+in tinymce a new parameter added: filemanager_access_key:"myPrivateKey" example tinymce config: tiny init ...
+
+external_filemanager_path:"../filemanager/",
+filemanager_title:"Filemanager" ,
+filemanager_access_key:"myPrivateKey" ,
+In addition to this simple implementation there isn't security, because every php files include first config/config.php file.
+
+So if you want to permit access only to a logged users you can add all the controls at beginning of config.php file.
+
+TRANSLITERATION and STRING CONVERSION
+With standard configuration responsive filemanager accepts all type of characters for file and folder names (like à é & ¥..., arabian, Chinese), if you want permits only latin charachters like A....Z a....z and 0....9, you can set to true the $transliteration variable on config.php .
+
+SET SUBFOLDER AS ROOT AND MULTI-USER USE
+You can set a subfolder as root.
+So you can have a root folder for each user.
+
+The way to implement this is set the session variable $_SESSION["RF"]["subfolder"] ="subfolder/name/"
+
+Remember that subfolder value must not have ../ ./ . inside and can't begin with /
+
+Folder Example:
+
+root
+-- folder1
+---- subfolder1
+---- subfolder2
+-- folder2
+----subfolder3
+
+User1 subfolder=""
+View:
+folder1
+-- subfolder1
+-- subfolder2
+folder2
+-- subfolder3
+
+User 2 subfolder="folder1"
+View:
+subfolder1
+subfolder2
+
+So if you want use filemanager in a multiuser CMS you can simply create a folder for each user and set a session variable ($_SESSION['subfolder']) with the name of the user folder.
+
+CUSTOMISE CONFIGURATION FOR EACH FOLDER (CONFIG.PHP)
+In FileManager Version you can customise the config.php for each folder. 
+Simply create a config.php file inside your desired folder, and add the php variables that you wish to change. (Don't change $current_path,$upload_dir,$base_url,$root variables). 
+You can also include an HTML text in the display folder page by simply inserting : $folder_message="html message" inside the config.php file in the folder. 
+You can use this to specify the restriction or image resize.
+
+Remember that the configuration of one folder is reflected in all its subdirectories.
+CROSS DOMAIN USE
+STAND-ALONE FILE MANAGER
+
+To enable cross-domain file selector, where files are hosted on one server (for example, serverA.com) and URL is being sent to another (for example, serverB.com), include crossdomain=1 in the URL.
+
+For example, to instantiate image picker, use the following URL: http://serverA.com/[path to filemanager]/filemanager/dialog.php?type=1&field_id=fieldID&crossdomain=1
+
+Then on serverB.com, the following code can be used to retrieve the URL after file selection is made. Please note, that the code is written for jQuery with FancyBox plug-in.
+
+ 	//
+// Handles message from ResponsiveFilemanager
+//
+function OnMessage(e){
+  var event = e.originalEvent;
+   // Make sure the sender of the event is trusted
+   if(event.data.sender === 'responsivefilemanager'){
+      if(event.data.field_id){
+      	var fieldID=event.data.field_id;
+      	var url=event.data.url;
+	$('#'+fieldID).val(url).trigger('change');
+	$.fancybox.close();
+
+	// Delete handler of the message from ResponsiveFilemanager
+	$(window).off('message', OnMessage);
+      }
+   }
+}
+
+// Handler for a message from ResponsiveFilemanager
+$(‘.opener-class).on('click',function(){
+  $(window).on('message', OnMessage);
+});
+FILE MANAGER AS TINYMCE PLUG-IN
+
+There is extra parameter needed filemanager_crossdomain when calling tinymce.init(), please see below.
+
+ tinymce.init({
+   ...
+   filemanager_crossdomain: true,
+   external_filemanager_path:"http://path/secondaryserver/filemanager/",
+   external_plugins: { "filemanager" : "http://path/secondaryserver/filemanager/plugin.min.js"},
+   ...
+});
+There is examples on demo page
+
+
+
+CONFIG.PHP PARAMETERS SETTING
+This is all parameters that you can change in config.php files
+Parameters stored only in config/config.php file
+
+Parameter	Example Value	Description
+base_url	http://site.com	base url of site (without final /). if you prefer relative urls leave empty.
+upload_dir	/uploads/	address path from base_url to base of upload folder (with start and final /).
+current_path	../uploads/	relative path from filemanager folder to upload folder (with final /).
+thumbs_base_path	thumbs/	relative path from filemanager folder to thumbs folder (with final /). NB thumbs folder must not reside in the upload folder.
+Parameters that you can override in all config.php files inside folders
+
+Parameter	Example Value	Description
+MaxSizeUpload	100	Max size upload limit in Mb.
+default_language	en_EN	default language file name.
+icon_theme	ico	the theme of icons. choose ico or ico_dark or you can cusatomize just putting a folder inside filemanager/img
+file_number_limit_js	500	the filter and sorter are managed through both javascript and php scripts. If you have a lot of files in a folder the javascript script wil not cope, so the filemanager then switches to the php script. The plugin automatically switches from javascript to php when the folder contains more than the specified number of files.
+show_sorting_bar	true	show or hide the sorting feature.
+show_folder_size	true	show or hide the folder size in filemanager list view (very large folders greatly increase the calculation time).
+transliteration	false	active or deactive the transliteration (mean convert all strange characters in A..Za..z0..9 characters).
+Images configuration
+lazy_loading_file_number_threshold	true	-1: There is no lazy loading at all, 0: Always lazy-load images, 0+: The minimum number of the files in a directory when lazy loading should be turned on.
+image_max_width, image_max_height	800	these parameters set maximum pixel width and/or maximum pixel height for all images. if you set a maximum width or height, oversized images are converted to those limits. Images smaller than the limit(s) are unaffected. if you don't need a limit set both to 0.
+image_resizing	false	activate or not Automatic resizing. if you set image_resizing to true the script converts all uploaded images exactly to image_resizing_width x image_resizing_height dimension.
+image_resizing_width, image_resizing_height	800	these parameters set the dimensions of the resized image. if you set width or height to 0 the script automatically calculates the other dimension. NB Very large images may cause the script to fail unless the server's php memory and time limit configuration is modified.
+Layout configuration
+default_view	0	set the Default layout setting. ( 0 => boxes, 1 => detailed list (1 column) , 2 => columns list (multiple columns depending on the width of the page)).
+ellipsis_title_after_first_row	true	if true the filename will be truncated if it runs beyond a single row.
+Permissions configuration
+delete_files	true	allow or disallow file deletion.
+create_folders	true	allow or disallow folder creation.
+delete_folders	true	allow or disallow folder deletion.
+upload_files	true	allow or disallow file uploading.
+rename_files	true	allow or disallow file renaming.
+rename_folders	true	allow or disallow folder renaming.
+duplicate_files	true	allow or disallow files duplication.
+Allowed extensions (this differentiation corresponds to the type filter)
+ext_file	'pdf', 'doc'	allowed file extensions
+ext_img	'jpg', 'jpeg'	allowed image file extensions.
+ext_video	'mov', 'mpeg'	allowed video file extensions.
+ext_music	'mp3', 'm4a'	allowed audio file extensions.
+ext_misc	'zip', 'rar'	allowed archive file extensions.
+Aviary configuration
+aviary_active	true	show or not show image editor button on context menu.
+aviary_key	1234567890	key available on aviary.com account.
+aviary_secret	1234567890	secred key available on aviary.com account.
+aviary_version	3	version of aviary.
+aviary_language	en	language of aviary (see aviary documentation to choose).
+Hidden files and folders
+hidden_folders	"hidden_folder1", "hidden_folder2"	set the names of any folders you want hidden. Remember: all folders with these names will be hidden (you can set any exceptions in config.php files in folders).
+hidden_files	"this_document.pdf", "that_image.jpg"	set the names of any files you want hidden. remember these names will be hidden in all folders.
+JAVA upload
+java_upload	true	enable or disable java applets uploads
+JAVAMaxSizeUpload	200	donparameter
+Thumbnail for external use creation
+New image resized creation with fixed path from filemanager folder after uploading (thumbnails in fixed mode).
+If you want create images resized out of upload folder for use with external script you can choose this method, You can create also more than one image at a time just simply add a value in the array.
+Remember than the image creation respect the folder hierarchy so if you are inside source/test/test1/ the new image will create at path_from_filemanager/test/test1/
+PS if there isn't write permission in your destination folder you must set it
+relative_image_creation	false	activate or not the creation of one or more image resized with relative path from upload folder
+fixed_path_from_filemanager	array('','')	array of relative path of the image folder from the current position on upload folder
+fixed_image_creation_to_append, fixed_image_creation_name_to_prepend	array('','')	name to append/prepend on filename
+fixed_image_creation_width, fixed_image_creation_height	array(0,0)	width/height of image (you can leave empty if you set the other dimension)
+New image resized creation with relative path inside to upload folder after uploading (thumbnails in relative mode).
+With Responsive filemanager you can create automatically resized image inside the upload folder, also more than one at a time just simply add a value in the array.
+The image creation path is always relative so if i'm inside source/test/test1 and I upload an image, the path start from here
+fixed_image_creation	false	activate or not the creation of one or more image resized with fixed path from filemanager folder
+relative_path_from_filemanager	array('','')	array of fixed path of the image folder from the current position on upload folder
+relative_image_creation_to_append, relative_image_creation_name_to_prepend	array('','')	name to append/prepend on filename
+relative_image_creation_width, relative_image_creation_height	array(0,0)	width/height of image (you can leave empty if you set the other dimension)
+LOCALIZATION
+- AZE [Elshad Agayev] 
+- BGR [Stanislav Panev]
+- BRA [paulomanrique]
+- CAT [Manel Peña]
+- CHN [Vu Doan Thang]
+- CRO 
+- CZE [jlusticky]
+- DAN [Morten Hesselberg Grove]
+- ENG
+- ESP [Roberto Santamaria] 
+- FRA [Mathieu Ducharme]
+- GER [Oliver Beta]
+- GRC [vkouvelis]
+- HUN [Novak Szabolcs]
+- IND [urayogi]
+- ITA
+- JPN [Vu Doan Thang]
+- LTU [Tomas Norkūnas]
+- MON [Tumenzul Batjargal]
+- NLD [Martijn van der Made]
+- NOR [Pål Schroeder]
+- Persian [web2web esf ir]
+- POL [Michell Hoduń]
+- POR [Sérgio Lima]
+- RUS [vasromand] 
+- SLO [Roman Šovčík]
+- SVN [Peter Benko]
+- SWE [Jon Sten]
+- TUR [Ahmed Faruk Bora]
+- UKR [Sergey]
+OLD CHANGES LOG
+ Changes in Version 8 (2013/08/30 - 2013/09/07)
+
+ Changes in Version 7.3 (2013/08/20 - 2013/08/26)
+
+ Changes in Version 7.2 (2013/08/13)
+
+ Changes in Version 7.1 (2013/08/11)
+
+ Changes in Version 7.0 (2013/08/06)
+
+ Changes in Version 6
+
+ Changes in Version 5
+
+ Changes in Version 4
+
+ Changes in Version 3
+
+and now
+LICENSE / DOWNLOAD
+Creative Commons License
+Responsive FileManager is licensed under a Creative Commons Attribution-NonCommercial 3.0 Unported License.
+
+You are free to use Responsive Filemanager for your personal or non-profit website projects. 
+You can get the author's permission to use Responsive Filemanager for commercial websites by making a free donation on below paypal button
+
+This free donation expresses how much you appreciate my work and how much you want to support the development of the responsive filemanager project.
+
+
+ 307  12 Google +0  1  0  704 
+If you like my work or if you want commercial permission... 
+please give me a donation to support the project
+PayPal - The safer, easier way to pay online! 
+
+or donating at trippo@hotmail.it
+The latest source code is available on GitHub.
+
+
+  
+
+Download v. 9.8.1 
+
+Subscribe to the Newsletter to keep up to date with news and new versions of the RESPONSIVE filemanager
+
+Email Address: * 
+First Name: 
+
+
+
+
+ 
+Credits
+Bootstrap => http://twitter.github.io/bootstrap/
+Bootstrap Lightbox => http://jbutz.github.io/bootstrap-lightbox/
+Dropzonejs => http://www.dropzonejs.com/
+Fancybox => http://fancybox.net/
+TouchSwipe => http://labs.rampinteractive.co.uk/touchSwipe/demos/
+PHP Image Magician => http://phpimagemagician.jarrodoberto.com/
+Mini icons => http://www.fatcow.com/free-icons‎
+JUpload => http://jupload.sourceforge.net/
+Bootbox => http://bootboxjs.com/ 
+jQuery contextMenu => http://medialize.github.io/jQuery-contextMenu/ 
+Bootstrap-modal => https://github.com/jschr/bootstrap-modal 
+jPlayer => http://jplayer.org/ 
+Lazy Load => http://www.appelsiini.net/projects/lazyload 
+Viewer.JS => http://viewerjs.org/
+
+Who build this
+OUR TEAM
+
+ALBERTO PERIPOLLI 
+PROJECT MANAGER, WEB DESIGN DEVELOPER AND WEB APPLICATIONS SPECIALIST
+hard working professional, a lot of experience in web application.
+
+Stay in touch
+CONTACT US
+Contact me on info [at] albertoperipolli.com or info [at] tecrail.com
+Lets connected
+
+Our office
+
+tecrail
+ Via Val Rossia 21
+36078 Valdagno (Vicenza) Italy
+ really do you want?
+
+
+Условия использования
+
+
+Карта
+Спутник
+200 м 
+
+
+Картографические данные © 2015 Basarsoft, Google, INEGI, ORION-ME
+Условия использования
+
+
+Карта
+Спутник
+500 км 
+

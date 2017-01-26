@@ -1,0 +1,1176 @@
+/usr/sbin/mysqld, Version: 5.5.43-0+deb7u1-log ((Debian)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 150527 13:51:44
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.000293  Lock_time: 0.000101 Rows_sent: 1  Rows_examined: 7
+SET timestamp=1432723904;
+SELECT count(*) FROM mysql.user WHERE user='root' and password='';
+# Time: 150527 13:51:45
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.471679  Lock_time: 0.000124 Rows_sent: 31  Rows_examined: 107
+SET timestamp=1432723905;
+select concat('select count(*) into @discard from `',
+                    TABLE_SCHEMA, '`.`', TABLE_NAME, '`') 
+      from information_schema.TABLES where ENGINE='MyISAM';
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.023012  Lock_time: 0.000329 Rows_sent: 0  Rows_examined: 1005
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`COLUMNS`;
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.000569  Lock_time: 0.000422 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`EVENTS`;
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.017016  Lock_time: 0.016825 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`PARAMETERS`;
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.022552  Lock_time: 0.000286 Rows_sent: 0  Rows_examined: 107
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`PARTITIONS`;
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.000547  Lock_time: 0.000214 Rows_sent: 0  Rows_examined: 23
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`PLUGINS`;
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.000274  Lock_time: 0.000155 Rows_sent: 0  Rows_examined: 1
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`PROCESSLIST`;
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.000729  Lock_time: 0.000370 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`ROUTINES`;
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.003366  Lock_time: 0.000229 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`TRIGGERS`;
+# User@Host: debian-sys-maint[debian-sys-maint] @ localhost []
+# Query_time: 0.002994  Lock_time: 0.000173 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1432723905;
+select count(*) into @discard from `information_schema`.`VIEWS`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.044312  Lock_time: 0.000060 Rows_sent: 0  Rows_examined: 24132
+use uinp_info;
+SET timestamp=1432723905;
+select * from `slc_seo` where `url` = 'http://193.235.147.119' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000136  Lock_time: 0.000025 Rows_sent: 3  Rows_examined: 3
+SET timestamp=1432723905;
+select * from `slc_menus`;
+# Time: 150527 13:51:46
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 1.172407  Lock_time: 0.000038 Rows_sent: 4  Rows_examined: 90590
+SET timestamp=1432723906;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.150467  Lock_time: 0.000053 Rows_sent: 4  Rows_examined: 90359
+SET timestamp=1432723906;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:51:47
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.149017  Lock_time: 0.000045 Rows_sent: 4  Rows_examined: 91437
+SET timestamp=1432723907;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.245409  Lock_time: 0.000043 Rows_sent: 4  Rows_examined: 103946
+SET timestamp=1432723907;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'world_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.148551  Lock_time: 0.000057 Rows_sent: 4  Rows_examined: 90912
+SET timestamp=1432723907;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'important_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:51:48
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.031388  Lock_time: 0.000050 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432723908;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/sberbank_prigrozil_mechelu_novymi_iskami' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000904  Lock_time: 0.000034 Rows_sent: 1  Rows_examined: 145
+SET timestamp=1432723908;
+select * from `slc_folders` where `alias` = 'novosti_rossii' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.031865  Lock_time: 0.000023 Rows_sent: 1  Rows_examined: 34268
+SET timestamp=1432723908;
+select * from `slc_aliases` where `alias` = 'sberbank_prigrozil_mechelu_novymi_iskami' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.091008  Lock_time: 0.000047 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432723908;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '34891' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000218  Lock_time: 0.000042 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432723908;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '34891';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000153  Lock_time: 0.000029 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432723908;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '34891' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:51:50
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 2.923026  Lock_time: 0.000047 Rows_sent: 500  Rows_examined: 404763
+SET timestamp=1432723910;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_folders`.`title` as `parent_title`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 500;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.005243  Lock_time: 0.000039 Rows_sent: 1  Rows_examined: 2800
+SET timestamp=1432723910;
+select * from `slc_articles` where `alias` = 'na_glavnoi' limit 1;
+# Time: 150527 13:51:52
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000237  Lock_time: 0.000045 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1432723912;
+select * from `slc_seo` where `url` = 'http://uinp.info' limit 1;
+# Time: 150527 13:51:54
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.031894  Lock_time: 0.000053 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432723914;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/yacenyuk_trebuet_provesti_v_regionah_kadrovye_zachistki' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000169  Lock_time: 0.000030 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1432723914;
+select * from `slc_folders` where `alias` = 'news' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.003979  Lock_time: 0.000022 Rows_sent: 1  Rows_examined: 6456
+SET timestamp=1432723914;
+select * from `slc_aliases` where `alias` = 'yacenyuk_trebuet_provesti_v_regionah_kadrovye_zachistki' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.078288  Lock_time: 0.000037 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432723914;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '6684' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000190  Lock_time: 0.000039 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432723914;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '6684';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000159  Lock_time: 0.000029 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432723914;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '6684' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:52:01
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.149870  Lock_time: 0.000061 Rows_sent: 1  Rows_examined: 44878
+SET timestamp=1432723921;
+select * from `slc_articles` where `published_at` = '0000-00-00 00:00:00' order by `id` asc limit 1;
+# Time: 150527 13:52:19
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.029593  Lock_time: 0.000063 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432723939;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/smi_konoplyanka_trebuet_u_stok_siti_zarplatu_v_100_tysyach_funtov_v_nedelyu' limit 1;
+# Time: 150527 13:52:20
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.143722  Lock_time: 0.000046 Rows_sent: 4  Rows_examined: 90591
+SET timestamp=1432723940;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.142127  Lock_time: 0.000047 Rows_sent: 4  Rows_examined: 90360
+SET timestamp=1432723940;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.030691  Lock_time: 0.000044 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432723940;
+select * from `slc_seo` where `url` = 'http://uinp.info/corruption/radio_svoboda_udalila_rasskaz_biznesmena_o_vzyatkah_putinu' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.156655  Lock_time: 0.000046 Rows_sent: 4  Rows_examined: 91438
+SET timestamp=1432723940;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.031902  Lock_time: 0.000040 Rows_sent: 1  Rows_examined: 41201
+SET timestamp=1432723940;
+select * from `slc_aliases` where `alias` = 'smi_konoplyanka_trebuet_u_stok_siti_zarplatu_v_100_tysyach_funtov_v_nedelyu' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.087405  Lock_time: 0.000114 Rows_sent: 1  Rows_examined: 190286
+SET timestamp=1432723940;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '41819' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000184  Lock_time: 0.000036 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432723940;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41819';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000144  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432723940;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41819' order by `id` desc limit 10 offset 0;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.160106  Lock_time: 0.000037 Rows_sent: 4  Rows_examined: 91438
+SET timestamp=1432723940;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000150  Lock_time: 0.000027 Rows_sent: 1  Rows_examined: 13
+SET timestamp=1432723940;
+select * from `slc_folders` where `alias` = 'corruption' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.024219  Lock_time: 0.000022 Rows_sent: 1  Rows_examined: 41015
+SET timestamp=1432723940;
+select * from `slc_aliases` where `alias` = 'radio_svoboda_udalila_rasskaz_biznesmena_o_vzyatkah_putinu' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.076084  Lock_time: 0.000053 Rows_sent: 1  Rows_examined: 190281
+SET timestamp=1432723940;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '41632' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000199  Lock_time: 0.000040 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432723940;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41632';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000133  Lock_time: 0.000028 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432723940;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41632' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:52:29
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.011231  Lock_time: 0.000122 Rows_sent: 39  Rows_examined: 39
+SET timestamp=1432723949;
+SELECT * FROM information_schema.CHARACTER_SETS;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000563  Lock_time: 0.000088 Rows_sent: 197  Rows_examined: 197
+SET timestamp=1432723949;
+SELECT * FROM information_schema.COLLATIONS;
+# Time: 150527 13:52:40
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000207  Lock_time: 0.000077 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432723960;
+SELECT COUNT(*) FROM `uinp_info`.`slc_comments`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000357  Lock_time: 0.000037 Rows_sent: 1  Rows_examined: 196
+SET timestamp=1432723960;
+SELECT COUNT(*) FROM `uinp_info`.`slc_folders`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000090  Lock_time: 0.000027 Rows_sent: 1  Rows_examined: 3
+SET timestamp=1432723960;
+SELECT COUNT(*) FROM `uinp_info`.`slc_menus`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000087  Lock_time: 0.000024 Rows_sent: 1  Rows_examined: 0
+SET timestamp=1432723960;
+SELECT COUNT(*) FROM `uinp_info`.`slc_migrations`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000091  Lock_time: 0.000025 Rows_sent: 1  Rows_examined: 22
+SET timestamp=1432723960;
+SELECT COUNT(*) FROM `uinp_info`.`slc_parser`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000075  Lock_time: 0.000024 Rows_sent: 1  Rows_examined: 3
+SET timestamp=1432723960;
+SELECT COUNT(*) FROM `uinp_info`.`slc_roles`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000075  Lock_time: 0.000023 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1432723960;
+SELECT COUNT(*) FROM `uinp_info`.`slc_settings`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000074  Lock_time: 0.000023 Rows_sent: 1  Rows_examined: 12
+SET timestamp=1432723960;
+SELECT COUNT(*) FROM `uinp_info`.`slc_users`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000454  Lock_time: 0.000346 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1432723960;
+SELECT SPECIFIC_NAME,ROUTINE_NAME,ROUTINE_TYPE,DTD_IDENTIFIER FROM information_schema.ROUTINES WHERE ROUTINE_SCHEMA= 'uinp_info';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000661  Lock_time: 0.000524 Rows_sent: 0  Rows_examined: 0
+SET timestamp=1432723960;
+SELECT EVENT_NAME, EVENT_TYPE FROM information_schema.EVENTS WHERE EVENT_SCHEMA= 'uinp_info';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.256078  Lock_time: 0.000037 Rows_sent: 4  Rows_examined: 103947
+SET timestamp=1432723960;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'world_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.172482  Lock_time: 0.000040 Rows_sent: 4  Rows_examined: 90913
+SET timestamp=1432723960;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'important_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:52:43
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 2.795725  Lock_time: 0.000040 Rows_sent: 500  Rows_examined: 404771
+SET timestamp=1432723963;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_folders`.`title` as `parent_title`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 500;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.006055  Lock_time: 0.000032 Rows_sent: 1  Rows_examined: 2800
+SET timestamp=1432723963;
+select * from `slc_articles` where `alias` = 'na_glavnoi' limit 1;
+# Time: 150527 13:52:46
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026972  Lock_time: 0.000034 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432723966;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/uranovaya_druzhba_dovela_do_arbitrazha' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.146590  Lock_time: 0.000038 Rows_sent: 4  Rows_examined: 90591
+SET timestamp=1432723966;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.155756  Lock_time: 0.000051 Rows_sent: 4  Rows_examined: 90360
+SET timestamp=1432723966;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.190649  Lock_time: 0.000040 Rows_sent: 4  Rows_examined: 91438
+SET timestamp=1432723966;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.022136  Lock_time: 0.000023 Rows_sent: 1  Rows_examined: 33571
+SET timestamp=1432723966;
+select * from `slc_aliases` where `alias` = 'uranovaya_druzhba_dovela_do_arbitrazha' limit 1;
+# Time: 150527 13:52:47
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.075901  Lock_time: 0.000046 Rows_sent: 1  Rows_examined: 190281
+SET timestamp=1432723967;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '34194' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000164  Lock_time: 0.000036 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432723967;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '34194';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000120  Lock_time: 0.000024 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432723967;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '34194' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:52:51
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.030349  Lock_time: 0.000041 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432723971;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/gibdd_predlozhila_sozdat_publichnyj_reestr_detskih_avtoperevozchikov' limit 1;
+# Time: 150527 13:52:52
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.148216  Lock_time: 0.000042 Rows_sent: 4  Rows_examined: 90591
+SET timestamp=1432723972;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.184526  Lock_time: 0.000040 Rows_sent: 4  Rows_examined: 90360
+SET timestamp=1432723972;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.153783  Lock_time: 0.000233 Rows_sent: 4  Rows_examined: 91438
+SET timestamp=1432723972;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.028443  Lock_time: 0.000057 Rows_sent: 1  Rows_examined: 42139
+SET timestamp=1432723972;
+select * from `slc_aliases` where `alias` = 'gibdd_predlozhila_sozdat_publichnyj_reestr_detskih_avtoperevozchikov' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.082807  Lock_time: 0.000047 Rows_sent: 1  Rows_examined: 190289
+SET timestamp=1432723972;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '42761' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000161  Lock_time: 0.000032 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432723972;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42761';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000125  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432723972;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42761' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:53:01
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.107256  Lock_time: 0.000049 Rows_sent: 1  Rows_examined: 44879
+SET timestamp=1432723981;
+select * from `slc_articles` where `published_at` = '0000-00-00 00:00:00' order by `id` asc limit 1;
+# Time: 150527 13:53:02
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000265  Lock_time: 0.000051 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1432723982;
+select * from `slc_seo` where `url` = 'http://uinp.info' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000124  Lock_time: 0.000018 Rows_sent: 3  Rows_examined: 3
+SET timestamp=1432723982;
+select * from `slc_menus`;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.140416  Lock_time: 0.000046 Rows_sent: 4  Rows_examined: 90592
+SET timestamp=1432723982;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.207858  Lock_time: 0.000044 Rows_sent: 4  Rows_examined: 90361
+SET timestamp=1432723982;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:53:03
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.204956  Lock_time: 0.000044 Rows_sent: 4  Rows_examined: 91439
+SET timestamp=1432723983;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.251227  Lock_time: 0.000052 Rows_sent: 4  Rows_examined: 103948
+SET timestamp=1432723983;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'world_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.172520  Lock_time: 0.000048 Rows_sent: 4  Rows_examined: 90914
+SET timestamp=1432723983;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'important_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:53:08
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.028063  Lock_time: 0.000043 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432723988;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/na_doneckomu_napryamku_bojoviki_obstrilyali_sili_ato_z_tankiv_ta_artileri_zaboronenih_kalibriv' limit 1;
+# Time: 150527 13:53:09
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000167  Lock_time: 0.000026 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1432723989;
+select * from `slc_folders` where `alias` = 'news' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.033273  Lock_time: 0.000023 Rows_sent: 1  Rows_examined: 41557
+SET timestamp=1432723989;
+select * from `slc_aliases` where `alias` = 'na_doneckomu_napryamku_bojoviki_obstrilyali_sili_ato_z_tankiv_ta_artileri_zaboronenih_kalibriv' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.081724  Lock_time: 0.000057 Rows_sent: 1  Rows_examined: 190310
+SET timestamp=1432723989;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '42177' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000166  Lock_time: 0.000035 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432723989;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42177';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000134  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432723989;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42177' order by `id` desc limit 10 offset 0;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 6.063794  Lock_time: 0.000042 Rows_sent: 500  Rows_examined: 404779
+SET timestamp=1432723989;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_folders`.`title` as `parent_title`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 500;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.005086  Lock_time: 0.000029 Rows_sent: 1  Rows_examined: 2800
+SET timestamp=1432723989;
+select * from `slc_articles` where `alias` = 'na_glavnoi' limit 1;
+# Time: 150527 13:53:14
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.044049  Lock_time: 0.000046 Rows_sent: 5  Rows_examined: 166198
+SET timestamp=1432723994;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_tags` inner join `slc_tagstoelement` on `slc_tagstoelement`.`tag_id` = `slc_tags`.`id` left join `slc_articles` on `slc_articles`.`id` = `slc_tagstoelement`.`element_id` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_tags`.`name` = ' статуя' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc;
+# Time: 150527 13:53:19
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.052222  Lock_time: 0.000053 Rows_sent: 111  Rows_examined: 167261
+SET timestamp=1432723999;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_tags` inner join `slc_tagstoelement` on `slc_tagstoelement`.`tag_id` = `slc_tags`.`id` left join `slc_articles` on `slc_articles`.`id` = `slc_tagstoelement`.`element_id` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_tags`.`name` = ' СФО' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc;
+# Time: 150527 13:53:31
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.034095  Lock_time: 0.000042 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724011;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/policiya_moskvy_zaderzhala_podozrevaemyh_v_podryve_bankomata' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000342  Lock_time: 0.000027 Rows_sent: 1  Rows_examined: 145
+SET timestamp=1432724011;
+select * from `slc_folders` where `alias` = 'novosti_rossii' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.027436  Lock_time: 0.000028 Rows_sent: 1  Rows_examined: 43107
+SET timestamp=1432724011;
+select * from `slc_aliases` where `alias` = 'policiya_moskvy_zaderzhala_podozrevaemyh_v_podryve_bankomata' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.087934  Lock_time: 0.000100 Rows_sent: 1  Rows_examined: 190286
+SET timestamp=1432724011;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '43740' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000177  Lock_time: 0.000035 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724011;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '43740';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000130  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724011;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '43740' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:53:39
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.028211  Lock_time: 0.000043 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724019;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/sud_prodovzhiv_aresht_eks-berkutivcyam_zinchenku_ta_abroskinu_do_26_chervnya' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.005600  Lock_time: 0.000032 Rows_sent: 1  Rows_examined: 9123
+SET timestamp=1432724019;
+select * from `slc_aliases` where `alias` = 'sud_prodovzhiv_aresht_eks-berkutivcyam_zinchenku_ta_abroskinu_do_26_chervnya' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.076641  Lock_time: 0.000055 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432724019;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '9532' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000217  Lock_time: 0.000044 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724019;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '9532';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000151  Lock_time: 0.000030 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724019;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '9532' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:53:40
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.027377  Lock_time: 0.000035 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724020;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/glava_mid_rf_oproverg_informaciyu_posolstva_ssha' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.023214  Lock_time: 0.000025 Rows_sent: 1  Rows_examined: 38172
+SET timestamp=1432724020;
+select * from `slc_aliases` where `alias` = 'glava_mid_rf_oproverg_informaciyu_posolstva_ssha' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.073732  Lock_time: 0.000046 Rows_sent: 1  Rows_examined: 190286
+SET timestamp=1432724020;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '38816' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000165  Lock_time: 0.000036 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724020;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '38816';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000143  Lock_time: 0.000026 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724020;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '38816' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:53:55
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.032846  Lock_time: 0.000043 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724035;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/pod_harkovom_neizvestnyj_rasstrelyal_lyudej_i_vzyal_zalozhnikov' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026032  Lock_time: 0.000032 Rows_sent: 1  Rows_examined: 42453
+SET timestamp=1432724035;
+select * from `slc_aliases` where `alias` = 'pod_harkovom_neizvestnyj_rasstrelyal_lyudej_i_vzyal_zalozhnikov' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.074623  Lock_time: 0.000055 Rows_sent: 1  Rows_examined: 190287
+SET timestamp=1432724035;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '43075' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000196  Lock_time: 0.000043 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724035;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '43075';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000141  Lock_time: 0.000026 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724035;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '43075' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:54:01
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.115030  Lock_time: 0.000055 Rows_sent: 1  Rows_examined: 44880
+SET timestamp=1432724041;
+select * from `slc_articles` where `published_at` = '0000-00-00 00:00:00' order by `id` asc limit 1;
+# Time: 150527 13:54:03
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.031536  Lock_time: 0.000049 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724043;
+select * from `slc_seo` where `url` = 'http://uinp.info/arhiv' limit 1;
+# Time: 150527 13:54:04
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.140044  Lock_time: 0.000098 Rows_sent: 4  Rows_examined: 90593
+SET timestamp=1432724044;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.137175  Lock_time: 0.000048 Rows_sent: 4  Rows_examined: 90362
+SET timestamp=1432724044;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.149971  Lock_time: 0.000047 Rows_sent: 4  Rows_examined: 91440
+SET timestamp=1432724044;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000426  Lock_time: 0.000037 Rows_sent: 1  Rows_examined: 453
+SET timestamp=1432724044;
+select * from `slc_aliases` where `alias` = 'arhiv' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.076727  Lock_time: 0.000044 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432724044;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '615' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000214  Lock_time: 0.000039 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724044;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '615';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000125  Lock_time: 0.000022 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724044;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '615' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:54:06
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.027922  Lock_time: 0.000054 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724046;
+select * from `slc_seo` where `url` = 'http://uinp.info/corruption/v_kievi_pobili_gromadskogo_aktivista_vitaliya_chernyahovskogo' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000201  Lock_time: 0.000029 Rows_sent: 1  Rows_examined: 13
+SET timestamp=1432724046;
+select * from `slc_folders` where `alias` = 'corruption' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.024521  Lock_time: 0.000022 Rows_sent: 1  Rows_examined: 41057
+SET timestamp=1432724046;
+select * from `slc_aliases` where `alias` = 'v_kievi_pobili_gromadskogo_aktivista_vitaliya_chernyahovskogo' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.079419  Lock_time: 0.000050 Rows_sent: 1  Rows_examined: 190281
+SET timestamp=1432724046;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '41675' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000230  Lock_time: 0.000053 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724046;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41675';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000189  Lock_time: 0.000023 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724046;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41675' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:54:08
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.259206  Lock_time: 0.000042 Rows_sent: 1508  Rows_examined: 58987
+SET timestamp=1432724048;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_articles`.`created_at` LIKE '%2015-05-21%' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc;
+# Time: 150527 13:54:16
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026103  Lock_time: 0.000040 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724056;
+select * from `slc_seo` where `url` = 'http://uinp.info/world_news' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000230  Lock_time: 0.000034 Rows_sent: 1  Rows_examined: 11
+SET timestamp=1432724056;
+select * from `slc_aliases` where `alias` = 'world_news' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.079436  Lock_time: 0.000045 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432724056;
+select `slc_folders`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_folders` inner join `slc_users` on `slc_users`.`id` = `slc_folders`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_folders.id AND slc_seo.table = "folders" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_folders.id AND slc_tagstoelement.table = "folders" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_folders`.`id` = '58' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000246  Lock_time: 0.000038 Rows_sent: 1  Rows_examined: 196
+SET timestamp=1432724056;
+select count(*) as aggregate from `slc_folders` where `parent_folder_id` = '58';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000435  Lock_time: 0.000025 Rows_sent: 0  Rows_examined: 196
+SET timestamp=1432724056;
+select * from `slc_folders` where `parent_folder_id` = '58' limit 20 offset 0;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.421572  Lock_time: 0.000037 Rows_sent: 500  Rows_examined: 104445
+SET timestamp=1432724056;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'world_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 500;
+# Time: 150527 13:54:27
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.045856  Lock_time: 0.000040 Rows_sent: 11  Rows_examined: 166258
+SET timestamp=1432724067;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_tags` inner join `slc_tagstoelement` on `slc_tagstoelement`.`tag_id` = `slc_tags`.`id` left join `slc_articles` on `slc_articles`.`id` = `slc_tagstoelement`.`element_id` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_tags`.`name` = ' Мозговой' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc;
+# Time: 150527 13:54:32
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.024000  Lock_time: 0.000045 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724072;
+select * from `slc_seo` where `url` = 'http://uinp.info/novyny_ukraine/na_luganshine_zaderzhali_belorusov_speshivshih_na_podmogu_terroristam_lnr' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000357  Lock_time: 0.000028 Rows_sent: 1  Rows_examined: 142
+SET timestamp=1432724072;
+select * from `slc_folders` where `alias` = 'novyny_ukraine' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.025566  Lock_time: 0.000028 Rows_sent: 1  Rows_examined: 41179
+SET timestamp=1432724072;
+select * from `slc_aliases` where `alias` = 'na_luganshine_zaderzhali_belorusov_speshivshih_na_podmogu_terroristam_lnr' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.076608  Lock_time: 0.000058 Rows_sent: 1  Rows_examined: 190282
+SET timestamp=1432724072;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '41797' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000235  Lock_time: 0.000054 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724072;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41797';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000157  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724072;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41797' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:54:42
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.028856  Lock_time: 0.000044 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724082;
+select * from `slc_seo` where `url` = 'http://uinp.info/novyny_ukraine/yacenyuk_perechislil_zadachi_novogo_glavy_amku' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026060  Lock_time: 0.000026 Rows_sent: 1  Rows_examined: 42121
+SET timestamp=1432724082;
+select * from `slc_aliases` where `alias` = 'yacenyuk_perechislil_zadachi_novogo_glavy_amku' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.076169  Lock_time: 0.000062 Rows_sent: 1  Rows_examined: 190283
+SET timestamp=1432724082;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '42743' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000196  Lock_time: 0.000040 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724082;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42743';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000163  Lock_time: 0.000033 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724082;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42743' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:54:45
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.032225  Lock_time: 0.000058 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724085;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/ograblenie_banka_v_kieve_prestupnik_prishel_s_obrezom_i_vynes_mulyazh_pachki_s_krupnymi_kupyurami' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.028506  Lock_time: 0.000030 Rows_sent: 1  Rows_examined: 44511
+SET timestamp=1432724085;
+select * from `slc_aliases` where `alias` = 'ograblenie_banka_v_kieve_prestupnik_prishel_s_obrezom_i_vynes_mulyazh_pachki_s_krupnymi_kupyurami' limit 1;
+# Time: 150527 13:54:47
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.085619  Lock_time: 0.000080 Rows_sent: 1  Rows_examined: 190284
+SET timestamp=1432724087;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '45147' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000238  Lock_time: 0.000047 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724087;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '45147';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000162  Lock_time: 0.000030 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724087;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '45147' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:54:59
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.027076  Lock_time: 0.000037 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724099;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/ukraincy_massovo_otmetili_den_vyshivanki_' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.023778  Lock_time: 0.000025 Rows_sent: 1  Rows_examined: 38385
+SET timestamp=1432724099;
+select * from `slc_aliases` where `alias` = 'ukraincy_massovo_otmetili_den_vyshivanki_' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.076426  Lock_time: 0.000050 Rows_sent: 1  Rows_examined: 190283
+SET timestamp=1432724099;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '39030' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000206  Lock_time: 0.000045 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724099;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '39030';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000144  Lock_time: 0.000032 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724099;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '39030' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:55:02
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.196761  Lock_time: 0.000051 Rows_sent: 1  Rows_examined: 44881
+SET timestamp=1432724102;
+select * from `slc_articles` where `published_at` = '0000-00-00 00:00:00' order by `id` asc limit 1;
+# Time: 150527 13:55:11
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.614181  Lock_time: 0.000041 Rows_sent: 4  Rows_examined: 90594
+SET timestamp=1432724111;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:55:12
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.469057  Lock_time: 0.000063 Rows_sent: 4  Rows_examined: 90363
+SET timestamp=1432724112;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.217319  Lock_time: 0.000047 Rows_sent: 4  Rows_examined: 91441
+SET timestamp=1432724112;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.049135  Lock_time: 0.000051 Rows_sent: 5  Rows_examined: 166198
+SET timestamp=1432724112;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_tags` inner join `slc_tagstoelement` on `slc_tagstoelement`.`tag_id` = `slc_tags`.`id` left join `slc_articles` on `slc_articles`.`id` = `slc_tagstoelement`.`element_id` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_tags`.`name` = ' планеты' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc;
+# Time: 150527 13:55:13
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026806  Lock_time: 0.000040 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724113;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/shvatka_alligatora_s_gruzovikom_pokorila_internet' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.027057  Lock_time: 0.000025 Rows_sent: 1  Rows_examined: 41984
+SET timestamp=1432724113;
+select * from `slc_aliases` where `alias` = 'shvatka_alligatora_s_gruzovikom_pokorila_internet' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.084235  Lock_time: 0.000051 Rows_sent: 1  Rows_examined: 190282
+SET timestamp=1432724113;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '42606' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000197  Lock_time: 0.000041 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724113;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42606';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000185  Lock_time: 0.000073 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724113;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42606' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:55:14
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.028966  Lock_time: 0.000048 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724114;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/vmesto_dobivatsya_mira_i_soblyudeniya_prav_cheloveka_na_donbasse_parlament_otkazalsya_ot_obyazatelstv_pered_grazhdanami__gusak' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026396  Lock_time: 0.000028 Rows_sent: 1  Rows_examined: 44479
+SET timestamp=1432724114;
+select * from `slc_aliases` where `alias` = 'vmesto_dobivatsya_mira_i_soblyudeniya_prav_cheloveka_na_donbasse_parlament_otkazalsya_ot_obyazatelstv_pered_grazhdanami__gusak' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.073230  Lock_time: 0.000059 Rows_sent: 1  Rows_examined: 190285
+SET timestamp=1432724114;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '45115' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000199  Lock_time: 0.000041 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724114;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '45115';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000132  Lock_time: 0.000025 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724114;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '45115' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:55:25
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026180  Lock_time: 0.000041 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724125;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/deti_uralskogo_svyashennika_mogli_pogibnut_iz-za_gaza' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.021984  Lock_time: 0.000027 Rows_sent: 1  Rows_examined: 34786
+SET timestamp=1432724125;
+select * from `slc_aliases` where `alias` = 'deti_uralskogo_svyashennika_mogli_pogibnut_iz-za_gaza' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.076726  Lock_time: 0.000045 Rows_sent: 1  Rows_examined: 190287
+SET timestamp=1432724125;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '35409' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000165  Lock_time: 0.000036 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724125;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '35409';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000161  Lock_time: 0.000031 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724125;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '35409' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:55:31
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.147377  Lock_time: 0.000077 Rows_sent: 1194  Rows_examined: 178108
+SET timestamp=1432724131;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_tags` inner join `slc_tagstoelement` on `slc_tagstoelement`.`tag_id` = `slc_tags`.`id` left join `slc_articles` on `slc_articles`.`id` = `slc_tagstoelement`.`element_id` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_tags`.`name` = ' мировые новости' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc;
+# Time: 150527 13:55:36
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.272008  Lock_time: 0.000038 Rows_sent: 4  Rows_examined: 103950
+SET timestamp=1432724136;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'world_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:55:37
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.175451  Lock_time: 0.000045 Rows_sent: 4  Rows_examined: 90916
+SET timestamp=1432724137;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'important_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:55:39
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 2.934540  Lock_time: 0.000066 Rows_sent: 500  Rows_examined: 404795
+SET timestamp=1432724139;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_folders`.`title` as `parent_title`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 500;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.007511  Lock_time: 0.000040 Rows_sent: 1  Rows_examined: 2800
+SET timestamp=1432724139;
+select * from `slc_articles` where `alias` = 'na_glavnoi' limit 1;
+# Time: 150527 13:55:44
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026757  Lock_time: 0.000053 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724144;
+select * from `slc_seo` where `url` = 'http://uinp.info/corruption/uchastniki_rizhskogo_sammita_otkazalis_osudit_anneksiyu_kryma' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.023711  Lock_time: 0.000028 Rows_sent: 1  Rows_examined: 39512
+SET timestamp=1432724144;
+select * from `slc_aliases` where `alias` = 'uchastniki_rizhskogo_sammita_otkazalis_osudit_anneksiyu_kryma' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.072888  Lock_time: 0.000056 Rows_sent: 1  Rows_examined: 190281
+SET timestamp=1432724144;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '40123' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000240  Lock_time: 0.000048 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724144;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '40123';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000139  Lock_time: 0.000031 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724144;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '40123' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:55:52
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.024374  Lock_time: 0.000047 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724152;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/gubernator_sevastopolya_v_2014_godu_zarabotal_menshe_svoih_zamov' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.023653  Lock_time: 0.000030 Rows_sent: 1  Rows_examined: 39610
+SET timestamp=1432724152;
+select * from `slc_aliases` where `alias` = 'gubernator_sevastopolya_v_2014_godu_zarabotal_menshe_svoih_zamov' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.075164  Lock_time: 0.000049 Rows_sent: 1  Rows_examined: 190288
+SET timestamp=1432724152;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '40221' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000251  Lock_time: 0.000044 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724152;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '40221';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000125  Lock_time: 0.000026 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724152;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '40221' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:56:00
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.068385  Lock_time: 0.000063 Rows_sent: 1  Rows_examined: 166158
+SET timestamp=1432724160;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_tags` inner join `slc_tagstoelement` on `slc_tagstoelement`.`tag_id` = `slc_tags`.`id` left join `slc_articles` on `slc_articles`.`id` = `slc_tagstoelement`.`element_id` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_tags`.`name` = ' поставляются' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc;
+# Time: 150527 13:56:01
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.092996  Lock_time: 0.000049 Rows_sent: 1  Rows_examined: 44882
+SET timestamp=1432724161;
+select * from `slc_articles` where `published_at` = '0000-00-00 00:00:00' order by `id` asc limit 1;
+# Time: 150527 13:56:03
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.040928  Lock_time: 0.000047 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724163;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/avakov_udovletvoril_raport_ob_otstavke_glavnogo_gaishnika_ukrainy' limit 1;
+# Time: 150527 13:56:04
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.278857  Lock_time: 0.000060 Rows_sent: 4  Rows_examined: 90595
+SET timestamp=1432724164;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.141453  Lock_time: 0.000041 Rows_sent: 4  Rows_examined: 90364
+SET timestamp=1432724164;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.152172  Lock_time: 0.000041 Rows_sent: 4  Rows_examined: 91442
+SET timestamp=1432724164;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.021272  Lock_time: 0.000023 Rows_sent: 1  Rows_examined: 35310
+SET timestamp=1432724164;
+select * from `slc_aliases` where `alias` = 'avakov_udovletvoril_raport_ob_otstavke_glavnogo_gaishnika_ukrainy' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.074848  Lock_time: 0.000050 Rows_sent: 1  Rows_examined: 190288
+SET timestamp=1432724164;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '35934' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000179  Lock_time: 0.000045 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724164;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '35934';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000120  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724164;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '35934' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:56:06
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.249420  Lock_time: 0.000044 Rows_sent: 4  Rows_examined: 103951
+SET timestamp=1432724166;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'world_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.157754  Lock_time: 0.000056 Rows_sent: 4  Rows_examined: 90917
+SET timestamp=1432724166;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'important_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:56:10
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 3.201943  Lock_time: 0.000045 Rows_sent: 500  Rows_examined: 404803
+SET timestamp=1432724170;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_folders`.`title` as `parent_title`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 500;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.005446  Lock_time: 0.000039 Rows_sent: 1  Rows_examined: 2800
+SET timestamp=1432724170;
+select * from `slc_articles` where `alias` = 'na_glavnoi' limit 1;
+# Time: 150527 13:56:31
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.030016  Lock_time: 0.000050 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724191;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/pravitelstvo_podderzhalo_ideyu_sozdaniya_patrioticheskogo_telekanala_dlya_molodezhi' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.023206  Lock_time: 0.000029 Rows_sent: 1  Rows_examined: 35734
+SET timestamp=1432724191;
+select * from `slc_aliases` where `alias` = 'pravitelstvo_podderzhalo_ideyu_sozdaniya_patrioticheskogo_telekanala_dlya_molodezhi' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.077017  Lock_time: 0.000050 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432724191;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '36371' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000275  Lock_time: 0.000073 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724191;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '36371';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000265  Lock_time: 0.000037 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724191;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '36371' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:56:45
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.027563  Lock_time: 0.000043 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724205;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/zapadnye_smi_priznali_prevoshodstvo_armaty_nad_zapadnymi_analogami' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.010636  Lock_time: 0.000031 Rows_sent: 1  Rows_examined: 16581
+SET timestamp=1432724205;
+select * from `slc_aliases` where `alias` = 'zapadnye_smi_priznali_prevoshodstvo_armaty_nad_zapadnymi_analogami' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.074591  Lock_time: 0.000051 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432724205;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '17012' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000199  Lock_time: 0.000044 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724205;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '17012';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000127  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724205;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '17012' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:56:46
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.024511  Lock_time: 0.000045 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724206;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/medvedev_otvetstvennost_za_neplatezhi_v_zhkh_nuzhno_usilit_k_oseni' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.024672  Lock_time: 0.000030 Rows_sent: 1  Rows_examined: 37551
+SET timestamp=1432724206;
+select * from `slc_aliases` where `alias` = 'medvedev_otvetstvennost_za_neplatezhi_v_zhkh_nuzhno_usilit_k_oseni' limit 1;
+# Time: 150527 13:56:47
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.081743  Lock_time: 0.000054 Rows_sent: 1  Rows_examined: 190289
+SET timestamp=1432724207;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '38193' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000213  Lock_time: 0.000048 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724207;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '38193';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000152  Lock_time: 0.000034 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724207;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '38193' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:57:02
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.100140  Lock_time: 0.000039 Rows_sent: 1  Rows_examined: 44883
+SET timestamp=1432724222;
+select * from `slc_articles` where `published_at` = '0000-00-00 00:00:00' order by `id` asc limit 1;
+# Time: 150527 13:57:11
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.023972  Lock_time: 0.000044 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724231;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/kejt_blanshett_potryasla_kanny_raspisannym_vruchnuyu_platem' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.140941  Lock_time: 0.000052 Rows_sent: 4  Rows_examined: 90596
+SET timestamp=1432724231;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.138811  Lock_time: 0.000044 Rows_sent: 4  Rows_examined: 90365
+SET timestamp=1432724231;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:57:12
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.159521  Lock_time: 0.000056 Rows_sent: 4  Rows_examined: 91443
+SET timestamp=1432724232;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.022654  Lock_time: 0.000031 Rows_sent: 1  Rows_examined: 33996
+SET timestamp=1432724232;
+select * from `slc_aliases` where `alias` = 'kejt_blanshett_potryasla_kanny_raspisannym_vruchnuyu_platem' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.082245  Lock_time: 0.000061 Rows_sent: 1  Rows_examined: 190286
+SET timestamp=1432724232;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '34619' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000224  Lock_time: 0.000048 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724232;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '34619';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000126  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724232;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '34619' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:57:17
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.037377  Lock_time: 0.000046 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724237;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/v_ukraine_soversheno_pokushenie_na_deputata_ot_partii_udar' limit 1;
+# Time: 150527 13:57:18
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.033857  Lock_time: 0.000029 Rows_sent: 1  Rows_examined: 40050
+SET timestamp=1432724238;
+select * from `slc_aliases` where `alias` = 'v_ukraine_soversheno_pokushenie_na_deputata_ot_partii_udar' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.076602  Lock_time: 0.000090 Rows_sent: 1  Rows_examined: 190281
+SET timestamp=1432724238;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '40665' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000286  Lock_time: 0.000105 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724238;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '40665';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000139  Lock_time: 0.000031 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724238;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '40665' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:57:38
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.025355  Lock_time: 0.000046 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724258;
+select * from `slc_seo` where `url` = 'http://uinp.info/corruption/anatolij_vitiv_avakov_-_odin_zi_stovpiv_kontrrevolyuci_i_uosoblennya_korupci_v_uryadi_yacenyuka' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.029848  Lock_time: 0.000037 Rows_sent: 1  Rows_examined: 40477
+SET timestamp=1432724258;
+select * from `slc_aliases` where `alias` = 'anatolij_vitiv_avakov_-_odin_zi_stovpiv_kontrrevolyuci_i_uosoblennya_korupci_v_uryadi_yacenyuka' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.077736  Lock_time: 0.000064 Rows_sent: 1  Rows_examined: 190281
+SET timestamp=1432724258;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '41093' limit 1;
+# Time: 150527 13:57:39
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000339  Lock_time: 0.000058 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724259;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41093';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.002743  Lock_time: 0.000035 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724259;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '41093' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:57:49
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026104  Lock_time: 0.000043 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724269;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/ekonomika_rossii_vpala_v_recessiyu' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.026877  Lock_time: 0.000030 Rows_sent: 1  Rows_examined: 41625
+SET timestamp=1432724269;
+select * from `slc_aliases` where `alias` = 'ekonomika_rossii_vpala_v_recessiyu' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.074012  Lock_time: 0.000056 Rows_sent: 1  Rows_examined: 190284
+SET timestamp=1432724269;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '42245' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000251  Lock_time: 0.000052 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724269;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42245';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000132  Lock_time: 0.000028 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724269;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '42245' order by `id` desc limit 10 offset 0;
+# Time: 150527 13:58:01
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.027170  Lock_time: 0.000065 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724281;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/byvshie_akcionery_yukos_poprosili_sodejstviya_v_vyplate_kompensacii_ot_rossii' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.023471  Lock_time: 0.000030 Rows_sent: 1  Rows_examined: 38807
+SET timestamp=1432724281;
+select * from `slc_aliases` where `alias` = 'byvshie_akcionery_yukos_poprosili_sodejstviya_v_vyplate_kompensacii_ot_rossii' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.082504  Lock_time: 0.000055 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432724281;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '39454' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000218  Lock_time: 0.000053 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724281;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '39454';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000140  Lock_time: 0.000030 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724281;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '39454' order by `id` desc limit 10 offset 0;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.113285  Lock_time: 0.000049 Rows_sent: 1  Rows_examined: 44884
+SET timestamp=1432724281;
+select * from `slc_articles` where `published_at` = '0000-00-00 00:00:00' order by `id` asc limit 1;
+# Time: 150527 13:58:04
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.025011  Lock_time: 0.000049 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724284;
+select * from `slc_seo` where `url` = 'http://uinp.info/novosti_rossii/putin_poruchil_razrabotat_strategiyu_razvitiya_interneta_v_rossii' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.028509  Lock_time: 0.000049 Rows_sent: 0  Rows_examined: 24132
+SET timestamp=1432724284;
+select * from `slc_seo` where `url` = 'http://uinp.info/news/vhod_v_mezhigore_podorozhal_v_pyat_raz' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.170200  Lock_time: 0.000058 Rows_sent: 4  Rows_examined: 90597
+SET timestamp=1432724284;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.172471  Lock_time: 0.000045 Rows_sent: 4  Rows_examined: 90597
+SET timestamp=1432724284;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'video' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# Time: 150527 13:58:05
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.318493  Lock_time: 0.000046 Rows_sent: 4  Rows_examined: 90366
+SET timestamp=1432724285;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.305478  Lock_time: 0.000048 Rows_sent: 4  Rows_examined: 90366
+SET timestamp=1432724285;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'weekly_news' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.364528  Lock_time: 0.000047 Rows_sent: 4  Rows_examined: 91444
+SET timestamp=1432724285;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.407212  Lock_time: 0.000055 Rows_sent: 4  Rows_examined: 91444
+SET timestamp=1432724285;
+select `slc_articles`.*, `slc_folders`.`path`, `slc_users`.`username`, `slc_users`.`google_account`, count(slc_comments.id) as commentscount from `slc_articles` inner join `slc_folders` on `slc_folders`.`id` = `slc_articles`.`parent_folder_id` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_comments` on `slc_comments`.`item_id` = slc_articles.id AND slc_comments.table = "articles" where `slc_folders`.`alias` = 'accident' and `slc_articles`.`published_at` != '0000-00-00 00:00:00' group by `slc_articles`.`id` order by `published_at` desc limit 4;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.023664  Lock_time: 0.000024 Rows_sent: 1  Rows_examined: 38881
+SET timestamp=1432724285;
+select * from `slc_aliases` where `alias` = 'putin_poruchil_razrabotat_strategiyu_razvitiya_interneta_v_rossii' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.038610  Lock_time: 0.000038 Rows_sent: 1  Rows_examined: 37069
+SET timestamp=1432724285;
+select * from `slc_aliases` where `alias` = 'vhod_v_mezhigore_podorozhal_v_pyat_raz' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.075249  Lock_time: 0.000051 Rows_sent: 1  Rows_examined: 190280
+SET timestamp=1432724285;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '39528' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000208  Lock_time: 0.000047 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724285;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '39528';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000140  Lock_time: 0.000032 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724285;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '39528' order by `id` desc limit 10 offset 0;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.081775  Lock_time: 0.000051 Rows_sent: 1  Rows_examined: 190286
+SET timestamp=1432724285;
+select `slc_articles`.*, `slc_users`.`username`, `slc_users`.`google_account`, `slc_users`.`thumb` as `userthumb`, `slc_seo`.`seo_title`, `slc_seo`.`keywords`, `slc_seo`.`description`, `slc_seo`.`img_alt`, `slc_seo`.`img_title`, GROUP_CONCAT(slc_tags.name) as tags from `slc_articles` inner join `slc_users` on `slc_users`.`id` = `slc_articles`.`user_id` left join `slc_seo` on `slc_seo`.`item_id` = slc_articles.id AND slc_seo.table = "articles" left join `slc_tagstoelement` on `slc_tagstoelement`.`element_id` = slc_articles.id AND slc_tagstoelement.table = "articles" left join `slc_tags` on `slc_tags`.`id` = `slc_tagstoelement`.`tag_id` where `slc_articles`.`id` = '37709' limit 1;
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.000537  Lock_time: 0.000049 Rows_sent: 1  Rows_examined: 5
+SET timestamp=1432724285;
+select count(*) as aggregate from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '37709';
+# User@Host: uinp_info[uinp_info] @ localhost []
+# Query_time: 0.002074  Lock_time: 0.000027 Rows_sent: 0  Rows_examined: 5
+SET timestamp=1432724285;
+select `slc_comments`.*, `slc_users`.`username` from `slc_comments` inner join `slc_users` on `slc_users`.`id` = `slc_comments`.`user_id` where `slc_comments`.`table` = 'articles' and `slc_comments`.`item_id` = '37709' order by `id` desc limit 10 offset 0;
